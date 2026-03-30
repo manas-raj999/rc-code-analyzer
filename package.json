@@ -1,0 +1,17 @@
+{
+  "name": "rc-code-analyzer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "skeletonize": "node src/skeletonize.js",
+  "benchmark": "node benchmark/run.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-typescript": "^0.23.2"
+  }
+}
