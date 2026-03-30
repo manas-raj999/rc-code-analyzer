@@ -33,10 +33,19 @@ Uses tree-sitter to parse TypeScript/JavaScript files and extract:
 - Class structure (no method bodies)
 
 ### Results on gemini-cli SDK files
+### Results on gemini-cli SDK files
 
 | File | Original | Skeleton | Reduction |
 |------|----------|----------|-----------|
-| *(run benchmark to populate)* | | | |
+| agent.integration.test.ts | ~1,587 tokens | ~56 tokens | **96.5%** |
+| tool.test.ts | ~1,125 tokens | ~55 tokens | **95.1%** |
+| skills.integration.test.ts | ~891 tokens | ~59 tokens | **93.4%** |
+| tool.ts | ~1,087 tokens | ~837 tokens | 23.0% |
+| types.ts | ~543 tokens | ~460 tokens | 15.3% |
+
+**Key insight**: Test files — which constitute a large fraction of any production monorepo — 
+reduce by ~95% because their bodies carry zero value for dependency graph construction. 
+Only imports are preserved, which is correct behavior.
 
 ## Usage
 ```bash
